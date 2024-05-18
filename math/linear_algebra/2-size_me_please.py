@@ -1,17 +1,21 @@
-#!/usr/bin/env python3
-import numpy as np
-
 def matrix_shape(matrix):
-    # Convert the input matrix to a NumPy array
-    np_matrix = np.array(matrix)
+    """
+    Calculates the shape of a matrix.
 
-    # Get the shape of the array
-    shape = np_matrix.shape
+    Args:
+        matrix (list[list]): A 2D matrix (nested list).
 
-    # Convert the shape tuple to a list of integers
-    shape_list = list(shape)
+    Returns:
+        list[int]: A list of integers representing the shape of the matrix.
+    """
+    shape = []
+    current_dim = matrix
 
-    return shape_list
+    while isinstance(current_dim, list):
+        shape.append(len(current_dim))
+        current_dim = current_dim[0] if current_dim else None
+
+    return shape
 
 # Example usage
 mat1 = [[1, 2], [3, 4]]
