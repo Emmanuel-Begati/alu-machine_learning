@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def matrix_transpose(matrix):
     # Create an empty result matrix with swapped dimensions
     num_rows = len(matrix)
