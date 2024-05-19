@@ -20,9 +20,3 @@ def add_matrices2D(mat1, mat2):
         return None
 
     return [[a + b for a, b in zip(row1, row2)] for row1, row2 in zip(mat1, mat2)]
-
-# Example usage
-mat1 = [[1, 2], [3, 4]]
-mat2 = [[5, 6], [7, 8]]
-result = add_matrices2D(mat1, mat2)
-print(result)  # Output: [[6, 8], [10, 12]]
