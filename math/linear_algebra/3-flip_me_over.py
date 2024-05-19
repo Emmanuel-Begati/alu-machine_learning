@@ -6,6 +6,7 @@ The `matrix_transpose` function takes a 2D matrix (a list of lists) and returns
 a new matrix that is the transpose of the input matrix.
 """
 
+
 def matrix_transpose(matrix):
     """
     Transposes the given 2D matrix.
@@ -13,7 +14,6 @@ def matrix_transpose(matrix):
     Args:
         matrix (list of list of int/float): A 2D list where each sublist
                                             represents a row of the matrix.
-    
     Returns:
         list of list of int/float: A new 2D list where each sublist represents
         a row of the transposed matrix (i.e., the columns
