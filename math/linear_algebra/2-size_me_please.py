@@ -8,13 +8,13 @@ def matrix_shape(matrix):
                        same dimension are assumed to be of the same size/shape
     Returns:
         list: A list of integers representing the shape of the matrix. Each
-              integer corresponds to the size of the matrix in that dimension. 
+              integer corresponds to the size of the matrix in that dimension.
     Example:
         >>> matrix_shape([[1, 2], [3, 4]])
         [2, 2]
         >>> matrix_shape([
                 [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]],
-                [[16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]
+            [[16, 17, 18, 19, 20],[21, 22, 23, 24, 25],[26, 27, 28, 29, 30]]
             ])
         [2, 3, 5]
     """
