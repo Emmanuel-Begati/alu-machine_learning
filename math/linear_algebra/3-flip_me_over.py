@@ -1,37 +1,46 @@
 #!/usr/bin/env python3
-"""
-This module provides a function to transpose a matrix.
 
-The `matrix_transpose` function takes a 2D matrix (a list of lists) and returns
-a new matrix that is the transpose of the input matrix.
+"""
+This module provides functions for matrix operations.
 """
 
 
 def matrix_transpose(matrix):
     """
-    Transposes the given 2D matrix.
+    Returns the transpose of a 2D matrix.
 
     Args:
-        matrix (list of list of int/float): A 2D list where each sublist
-                                            represents a row of the matrix.
+        matrix (list): The input 2D matrix.
+
     Returns:
-        list of list of int/float: A new 2D list where each sublist represents
-        a row of the transposed matrix (i.e., the columns
-        of the original matrix become the rows of the new matrix).
-    Example
-        >>> matrix_transpose([[1, 2, 3], [4, 5, 6]])
-        [[1, 4], [2, 5], [3, 6]]
-        >>> matrix_transpose([[1, 2], [3, 4], [5, 6]])
-        [[1, 3, 5], [2, 4, 6]]
+        list: The transpose of the input matrix.
     """
-    # Create an empty result matrix with swapped dimensions
-    num_rows = len(matrix)
-    num_cols = len(matrix[0])
-    result = [[0] * num_rows for _ in range(num_cols)]
+    # Get the dimensions of the input matrix
+    rows = len(matrix)
+    cols = len(matrix[0])
 
-    # Fill in the result matrix with transposed elements
-    for i in range(num_rows):
-        for j in range(num_cols):
-            result[j][i] = matrix[i][j]
+    # Initialize a new matrix with dimensions swapped
+    transposed_matrix = [[0 for _ in range(rows)] for _ in range(cols)]
 
-    return result
+    # Populate the transposed matrix
+    for i in range(rows):
+        for j in range(cols):
+            transposed_matrix[j][i] = matrix[i][j]
+
+    return transposed_matrix
+
+
+if __name__ == "__main__":
+    mat1 = [[1, 2], [3, 4]]
+    print(mat1)
+    print(matrix_transpose(mat1))
+    mat2 = [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20],
+        [21, 22, 23, 24, 25],
+        [26, 27, 28, 29, 30],
+    ]
+    print(mat2)
+    print(matrix_transpose(mat2))
