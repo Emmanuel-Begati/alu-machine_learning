@@ -53,7 +53,7 @@ class Neuron:
         """
         # Linear combination Z = W.X + b
         Z = np.dot(self.__W, X) + self.__b
-     
+
         # Sigmoid activation function A = 1 / (1 + e^(-Z))
         self.__A = 1 / (1 + np.exp(-Z))
 
