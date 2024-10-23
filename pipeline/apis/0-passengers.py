@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-This module provides a function to retrieve a list of starships from the SWAPI API
-that can hold a given number of passengers.
-"""
-
 import requests
 
 def availableShips(passenger_count):
@@ -26,7 +20,8 @@ def availableShips(passenger_count):
         
         for ship in ships:
             try:
-                if int(ship['passengers']) >= passenger_count:
+                passengers = int(ship['passengers'].replace(',', ''))
+                if passengers >= passenger_count:
                     ships_list.append(ship['name'])
             except ValueError:
                 continue
@@ -34,3 +29,9 @@ def availableShips(passenger_count):
         url = data['next']
     
     return ships_list
+
+# Test the function
+if __name__ == "__main__":
+    ships = availableShips(4)
+    for ship in ships:
+        print(ship)
