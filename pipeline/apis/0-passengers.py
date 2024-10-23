@@ -6,6 +6,7 @@ that can hold a given number of passengers.
 
 import requests
 
+
 def availableShips(passenger_count):
     """
     Returns a list of starships that can hold at least `passenger_count` passengers.
